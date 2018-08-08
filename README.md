@@ -2,6 +2,7 @@ Test of Mosquitto c++ mqtt async implementation
 
 Build step:
 ------
+* ./installMosquitto.zsh
 * mkdir build
 * cd build
 * cmake ../
