@@ -5,6 +5,7 @@ add_compile_options(-std=c++11)
 
 find_package(Mosquittopp REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system)
+find_package (Threads REQUIRED)
 
 
 ###########
@@ -26,10 +27,12 @@ add_executable(${PROJECT_NAME}_pub src/publisher_node.cpp
  target_link_libraries(${PROJECT_NAME}_sub
    ${MOSQUITTOPP_LIBRARIES}
    ${Boost_LIBRARIES}
+   ${CMAKE_THREAD_LIBS_INIT}
  )
  target_link_libraries(${PROJECT_NAME}_pub
    ${MOSQUITTOPP_LIBRARIES}
    ${Boost_LIBRARIES}
+   ${CMAKE_THREAD_LIBS_INIT}
  )
 
 #############
