@@ -1,2 +1,3 @@
 sudo apt install -y mosquitto mosquitto-clients
-sudo cp cfg/FindMosquittopp.cmake /usr/share/cmake-3.5/Modules/
+version=$(cmake --version | awk 'NR==1' | awk '{print $3}' | grep -e "..." -o)
+sudo cp cfg/FindMosquittopp.cmake /usr/share/cmake-${version}/Modules/
